@@ -10,6 +10,33 @@ const API_LOGOUT = `${API_BASE}/logout`;
 const API_ME = `${API_BASE}/me`;
 const FRONT_HOME = `${window.location.origin}${baseFromAdmin}/`;
 
+function resolveAsset(path) {
+    if (!path) return '';
+    if (/^https?:\/\//i.test(path)) return path;
+    const normalized = path.startsWith('/') ? path : `/${path}`;
+    return `${API_BASE}${normalized}`;
+}
+
+async function applyAdminFavicon() {
+    try {
+        const res = await fetch(`${API_BASE}/hero`);
+        const data = await res.json();
+        const hero = data?.hero || {};
+        const iconPath = hero.favicon || hero.logo;
+        if (!iconPath) return;
+
+        let link = document.querySelector('link[rel="icon"]');
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+        }
+        link.href = resolveAsset(iconPath);
+    } catch (_) {
+        // silencioso
+    }
+}
+
 function openSidebar() {
     document.body.classList.add('sidebar-open');
 }
@@ -290,4 +317,5 @@ const guard = async () => {
 };
 
 guard();
+applyAdminFavicon();
 })();
