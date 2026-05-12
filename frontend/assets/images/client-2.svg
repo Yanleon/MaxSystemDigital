@@ -1,0 +1,5 @@
+<svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+<rect width="300" height="120" rx="16" fill="#ECF3FF"/>
+<rect x="34" y="42" width="36" height="36" rx="8" fill="#2F66F8"/>
+<text x="88" y="68" fill="#143066" font-family="Arial, sans-serif" font-size="24" font-weight="700">URBANPAY</text>
+</svg>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajos | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>CY</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html" class="active">Trabajos</a>
+                <a href="about.html">Sobre Nosotros</a>
+                <a href="seo.html">SEO</a>
+                <a href="footer.html">Footer</a>
+                <a href="users.html">Usuarios</a>
+                <a href="support.html" class="support-only">Soporte</a>
+                <a href="profile.html" class="profile-only">Perfil</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Gestión de trabajos</p>
+                    <h1>Trabajos Realizados</h1>
+                </div>
+            </header>
+
+            <div class="card">
+                <h2>Agregar proyecto</h2>
+                <form id="portfolioForm">
+                    <input type="text" id="portfolioTitle" placeholder="Título" required>
+                    <input type="text" id="portfolioImage" placeholder="Imagen (URL)" >
+                    <input type="file" id="portfolioImageFile" accept="image/*">
+                    <textarea id="portfolioDesc" rows="3" placeholder="Descripción" required></textarea>
+                    <button type="submit" class="btn">Guardar proyecto</button>
+                    <span id="portfolioFormMsg" class="muted"></span>
+                </form>
+            </div>
+
+            <div class="card" style="margin-top:14px;">
+                <h2>Listado</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Imagen</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="portfolioTable">
+                        <tr><td colspan="4">Cargando...</td></tr>
+                    </tbody>
+                </table>
+                <p id="portfolioStatus" class="muted"></p>
+            </div>
+
+            <!-- Modal edición -->
+            <div id="portfolioModal" class="modal-backdrop" style="display:none;">
+                <div class="modal">
+                    <h3>Editar proyecto</h3>
+                    <label for="editPortfolioTitle">Título</label>
+                    <input type="text" id="editPortfolioTitle" placeholder="Título" />
+                    <label for="editPortfolioImage">Imagen (URL opcional si no subes archivo)</label>
+                    <input type="text" id="editPortfolioImage" placeholder="URL de imagen" />
+                    <label for="editPortfolioImageFile">Imagen (archivo opcional)</label>
+                    <input type="file" id="editPortfolioImageFile" accept="image/*" />
+                    <label for="editPortfolioDesc">Descripción</label>
+                    <textarea id="editPortfolioDesc" rows="3" placeholder="Descripción"></textarea>
+                    <div class="modal-actions">
+                        <button class="btn secondary" id="closePortfolioModal">Cancelar</button>
+                        <button class="btn" id="savePortfolioModal">Guardar</button>
+                    </div>
+                    <p id="portfolioModalMsg" class="muted"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/portfolio.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

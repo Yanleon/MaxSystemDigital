@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Block sensitive file access in public folder
+<FilesMatch "\.(env|ini|log|sql|sqlite|bak|dist|md|yml|yaml)$">
+    Require all denied
+</FilesMatch>
+
+# Si el archivo o carpeta NO existe
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todo a index.php
+RewriteRule ^ index.php [QSA,L]

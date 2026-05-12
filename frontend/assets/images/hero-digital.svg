@@ -1,0 +1,20 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1400" height="900" rx="24" fill="url(#bg)"/>
+<circle cx="1140" cy="160" r="180" fill="#2D6BFF" fill-opacity="0.25"/>
+<circle cx="240" cy="760" r="220" fill="#1ED0FF" fill-opacity="0.2"/>
+<rect x="120" y="150" width="780" height="470" rx="22" fill="#0E234F" stroke="#6EA0FF" stroke-opacity="0.45"/>
+<rect x="160" y="200" width="240" height="18" rx="9" fill="#9FC1FF"/>
+<rect x="160" y="245" width="340" height="12" rx="6" fill="#5E80C1"/>
+<rect x="160" y="275" width="300" height="12" rx="6" fill="#5E80C1"/>
+<rect x="160" y="340" width="180" height="120" rx="12" fill="#17356F"/>
+<rect x="360" y="340" width="180" height="120" rx="12" fill="#17356F"/>
+<rect x="560" y="340" width="180" height="120" rx="12" fill="#17356F"/>
+<path d="M930 610L1210 300L1280 370L1000 680L930 610Z" fill="#8CB2FF"/>
+<text x="980" y="760" fill="#E8F0FF" font-family="Arial, sans-serif" font-size="44" font-weight="700">MAXSYSTEMDIGITAL</text>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1400" y2="900" gradientUnits="userSpaceOnUse">
+<stop stop-color="#081634"/>
+<stop offset="1" stop-color="#102A62"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>CY</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html">Trabajos</a>
+                <a href="about.html">Sobre Nosotros</a>
+                <a href="seo.html">SEO</a>
+                <a href="footer.html">Footer</a>
+                <a href="users.html" class="active">Usuarios</a>
+                <a href="support.html" class="support-only">Soporte</a>
+                <a href="profile.html" class="profile-only">Perfil</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Gestión de usuarios</p>
+                    <h1>Usuarios</h1>
+                </div>
+                <button class="btn danger" id="logoutBtn">Cerrar sesión</button>
+            </header>
+
+            <div class="card">
+                <h2>Crear usuario</h2>
+                <form id="userForm">
+                    <input type="text" id="userName" placeholder="Nombre" required>
+                    <input type="email" id="userEmail" placeholder="Email" required>
+                    <input type="password" id="userPass" placeholder="Contraseña" autocomplete="current-password" required>
+                    <select id="userRole" required>
+                        <option value="admin">admin</option>
+                        <option value="editor">editor</option>
+                        <option value="soporte">soporte</option>
+                    </select>
+                    <button type="submit" class="btn">Guardar</button>
+                    <span id="userFormMsg" class="muted"></span>
+                </form>
+            </div>
+
+            <div class="card" style="margin-top:14px;">
+                <h2>Listado</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTable">
+                        <tr><td colspan="4">Cargando...</td></tr>
+                    </tbody>
+                </table>
+                <p id="userStatus" class="muted"></p>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/users.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

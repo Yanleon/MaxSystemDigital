@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>CY</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html">Trabajos</a>
+                <a href="about.html">Sobre Nosotros</a>
+                <a href="seo.html" class="active">SEO</a>
+                <a href="footer.html">Footer</a>
+                <a href="users.html">Usuarios</a>
+                <a href="support.html" class="support-only">Soporte</a>
+                <a href="profile.html" class="profile-only">Perfil</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Optimizacion</p>
+                    <h1>Configuracion SEO</h1>
+                </div>
+            </header>
+
+            <div class="card">
+                <h2>Meta etiquetas y schema</h2>
+                <p class="muted">Gestiona SEO tecnico base desde el panel.</p>
+
+                <div class="grid-3">
+                    <div>
+                        <label for="metaTitle">Meta title</label>
+                        <input id="metaTitle" type="text" maxlength="160" placeholder="Titulo SEO (60 recomendado)">
+                    </div>
+                    <div>
+                        <label for="canonicalUrl">Canonical URL</label>
+                        <input id="canonicalUrl" type="url" placeholder="https://tudominio.com/">
+                    </div>
+                    <div>
+                        <label for="robots">Robots</label>
+                        <select id="robots">
+                            <option value="index,follow">index,follow</option>
+                            <option value="noindex,follow">noindex,follow</option>
+                            <option value="index,nofollow">index,nofollow</option>
+                            <option value="noindex,nofollow">noindex,nofollow</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="metaDescription">Meta description</label>
+                <textarea id="metaDescription" rows="3" placeholder="Descripcion para Google (140-160 recomendado)"></textarea>
+
+                <label for="metaKeywords">Meta keywords</label>
+                <input id="metaKeywords" type="text" placeholder="keyword1, keyword2, keyword3">
+
+                <div class="grid-3">
+                    <div>
+                        <label for="ogTitle">OG title</label>
+                        <input id="ogTitle" type="text" maxlength="160" placeholder="Titulo para compartir en redes">
+                    </div>
+                    <div style="grid-column: span 2;">
+                        <label for="ogDescription">OG description</label>
+                        <input id="ogDescription" type="text" placeholder="Descripcion para redes sociales">
+                    </div>
+                </div>
+
+                <label for="schemaJson">Schema JSON-LD</label>
+                <textarea id="schemaJson" rows="8" placeholder='{"@context":"https://schema.org","@type":"Organization"}'></textarea>
+
+                <div class="actions" style="margin-top: 10px;">
+                    <button class="btn" id="saveSeoBtn">Guardar SEO</button>
+                    <button class="btn secondary" id="resetSeoBtn">Recargar</button>
+                </div>
+                <p id="seoMsg" class="muted"></p>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/seo.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

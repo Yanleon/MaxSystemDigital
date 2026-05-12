@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>CY</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html">Trabajos</a>
+                <a href="about.html">Sobre Nosotros</a>
+                <a href="seo.html">SEO</a>
+                <a href="footer.html" class="active">Footer</a>
+                <a href="users.html">Usuarios</a>
+                <a href="support.html" class="support-only">Soporte</a>
+                <a href="profile.html" class="profile-only">Perfil</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Sección pública</p>
+                    <h1>Footer</h1>
+                </div>
+            </header>
+
+            <div class="card">
+                <h2>Contenido Footer</h2>
+                <form id="footerForm">
+                    <input type="text" id="brandTitle" placeholder="Titulo de marca (ej. MAXSYSTEMDIGITAL)" required>
+                    <input type="text" id="tagline" placeholder="Tagline" required>
+
+                    <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px;">
+                        <div>
+                            <label>Facebook</label>
+                            <input type="text" id="facebook" placeholder="https://facebook.com/...">
+                        </div>
+                        <div>
+                            <label>Instagram</label>
+                            <input type="text" id="instagram" placeholder="https://instagram.com/...">
+                        </div>
+                        <div>
+                            <label>Twitter</label>
+                            <input type="text" id="twitter" placeholder="https://twitter.com/...">
+                        </div>
+                        <div>
+                            <label>WhatsApp</label>
+                            <input type="text" id="whatsapp" placeholder="https://wa.me/57...">
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input type="text" id="email" placeholder="contacto@maxsystemdigital.com" required>
+                        </div>
+                        <div>
+                            <label>Dirección</label>
+                            <input type="text" id="address" placeholder="Kr 14 # 1-05, Bogotá" required>
+                        </div>
+                        <div>
+                            <label>Teléfono</label>
+                            <input type="text" id="phone" placeholder="350-6427231" required>
+                        </div>
+                    </div>
+
+                    <input type="text" id="linkInicio" placeholder="Enlace Inicio" value="#inicio">
+                    <input type="text" id="linkNosotros" placeholder="Enlace Sobre Nosotros" value="#nosotros">
+                    <input type="text" id="linkServicios" placeholder="Enlace Servicios" value="#servicios">
+                    <input type="text" id="linkTrabajos" placeholder="Enlace Trabajos" value="#trabajos">
+                    <input type="text" id="linkTienda" placeholder="Enlace Tienda" value="#tienda">
+
+                    <input type="text" id="footerNote" placeholder="Texto final / copyright" required>
+
+                    <button type="submit" class="btn">Guardar</button>
+                    <span id="footerFormMsg" class="muted"></span>
+                </form>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/footer.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

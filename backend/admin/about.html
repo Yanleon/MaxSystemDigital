@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>CY</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html">Trabajos</a>
+                <a href="about.html" class="active">Sobre Nosotros</a>
+                <a href="seo.html">SEO</a>
+                <a href="footer.html">Footer</a>
+                <a href="users.html">Usuarios</a>
+                <a href="support.html" class="support-only">Soporte</a>
+                <a href="profile.html" class="profile-only">Perfil</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Sección pública</p>
+                    <h1>Sobre Nosotros</h1>
+                </div>
+            </header>
+
+            <div class="card">
+                <h2>Contenido principal</h2>
+                <form id="aboutForm">
+                    <input type="text" id="aboutTitle" placeholder="Título" required>
+                    <textarea id="aboutP1" rows="3" placeholder="Párrafo 1" required></textarea>
+                    <textarea id="aboutP2" rows="3" placeholder="Párrafo 2" required></textarea>
+                    <input type="text" id="aboutImage" placeholder="Imagen (URL opcional si no subes archivo)">
+                    <input type="file" id="aboutImageFile" accept="image/*">
+
+                    <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px;">
+                        <div>
+                            <label>Feature 1 ícono</label>
+                            <input type="text" id="f1Icon" placeholder="fa-solid fa-award">
+                            <label>Feature 1 título</label>
+                            <input type="text" id="f1Title" placeholder="Ej: 10+ Años de Experiencia">
+                        </div>
+                        <div>
+                            <label>Feature 2 ícono</label>
+                            <input type="text" id="f2Icon" placeholder="fa-solid fa-user-check">
+                            <label>Feature 2 título</label>
+                            <input type="text" id="f2Title" placeholder="Clientes Satisfechos">
+                        </div>
+                        <div>
+                            <label>Feature 3 ícono</label>
+                            <input type="text" id="f3Icon" placeholder="fa-solid fa-headset">
+                            <label>Feature 3 título</label>
+                            <input type="text" id="f3Title" placeholder="Soporte 24/7">
+                        </div>
+                        <div>
+                            <label>Feature 4 ícono</label>
+                            <input type="text" id="f4Icon" placeholder="fa-solid fa-shield-hal">
+                            <label>Feature 4 título</label>
+                            <input type="text" id="f4Title" placeholder="Garantía en Servicios">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Guardar</button>
+                    <span id="aboutFormMsg" class="muted"></span>
+                </form>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/about.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

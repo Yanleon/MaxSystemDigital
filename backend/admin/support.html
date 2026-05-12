@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>CY</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html">Trabajos</a>
+                <a href="about.html">Sobre Nosotros</a>
+                <a href="seo.html">SEO</a>
+                <a href="footer.html">Footer</a>
+                <a href="users.html">Usuarios</a>
+                <a href="support.html" class="active support-only">Soporte</a>
+                <a href="profile.html" class="profile-only">Perfil</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Asignar contactos a soporte</p>
+                    <h1>Soporte</h1>
+                </div>
+            </header>
+
+            <div class="card">
+                <h2>Contactos</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Celular</th>
+                            <th>Servicio</th>
+                            <th>Estado</th>
+                            <th>Soporte</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="supportTable">
+                        <tr><td colspan="6">Cargando...</td></tr>
+                    </tbody>
+                </table>
+                <p id="supportStatus" class="muted"></p>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/support.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

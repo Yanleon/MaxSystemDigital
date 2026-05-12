@@ -1,0 +1,18 @@
+# Block direct access to sensitive backend internals
+RewriteEngine On
+
+# Deny hidden files (.env, .git, etc.)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Deny direct access to sensitive extensions
+<FilesMatch "\.(env|ini|log|sql|sqlite|bak|dist|md|yml|yaml|sh|bat|cmd|ps1)$">
+    Require all denied
+</FilesMatch>
+
+# Block execution of PHP inside uploads and storage by default
+RewriteRule ^public/uploads/.*\.(php[0-9]?|phtml|phar)$ - [F,L,NC]
+RewriteRule ^storage/.* - [F,L,NC]
+RewriteRule ^app/.* - [F,L,NC]
+RewriteRule ^config/.* - [F,L,NC]

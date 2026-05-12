@@ -1,0 +1,6 @@
+<svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+<rect width="300" height="120" rx="16" fill="#ECF3FF"/>
+<path d="M32 42H68V78H32V42Z" fill="#2F66F8"/>
+<path d="M38 48H62V72H38V48Z" fill="#ECF3FF"/>
+<text x="88" y="68" fill="#143066" font-family="Arial, sans-serif" font-size="24" font-weight="700">LOGICORE</text>
+</svg>

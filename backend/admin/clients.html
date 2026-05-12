@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>CY</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html" class="active">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html">Trabajos</a>
+                <a href="about.html">Sobre Nosotros</a>
+                <a href="seo.html">SEO</a>
+                <a href="footer.html">Footer</a>
+                <a href="users.html">Usuarios</a>
+                <a href="support.html" class="support-only">Soporte</a>
+                <a href="profile.html" class="profile-only">Perfil</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Gestión de clientes</p>
+                    <h1>Nuestros Clientes</h1>
+                </div>
+            </header>
+
+            <div class="card">
+                <h2>Textos de la seccion clientes</h2>
+                <form id="clientsSectionForm" style="margin-bottom: 14px;">
+                    <input type="text" id="clientsKicker" placeholder="Kicker (ej. CLIENTES)">
+                    <input type="text" id="clientsTitle" placeholder="Titulo de seccion" required>
+                    <textarea id="clientsSubtitle" rows="2" placeholder="Subtitulo" required></textarea>
+                    <button type="submit" class="btn secondary">Guardar textos</button>
+                    <span id="clientsSectionMsg" class="muted"></span>
+                </form>
+
+                <h2>Agregar cliente</h2>
+                <p class="muted">Estos clientes se muestran en la sección "Nuestros Clientes" del front.</p>
+                <form id="clientForm">
+                    <input type="text" id="clientName" placeholder="Nombre" required>
+                    <input type="text" id="clientLogo" placeholder="URL del logo" required>
+                    <button type="submit" class="btn">Guardar cliente</button>
+                    <span id="clientFormMsg" class="muted"></span>
+                </form>
+            </div>
+
+            <div class="card" style="margin-top:14px;">
+                <h2>Listado</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Logo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clientsTable">
+                        <tr><td colspan="3">Cargando...</td></tr>
+                    </tbody>
+                </table>
+                <p id="clientStatus" class="muted"></p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal edición cliente -->
+    <div id="clientModal" class="modal-backdrop" style="display:none;">
+        <div class="modal">
+            <h3>Editar cliente</h3>
+            <label for="editClientName">Nombre</label>
+            <input type="text" id="editClientName" placeholder="Nombre" />
+            <label for="editClientLogo">URL del logo</label>
+            <input type="text" id="editClientLogo" placeholder="URL del logo" />
+            <div class="modal-actions">
+                <button class="btn secondary" id="closeClientModal">Cancelar</button>
+                <button class="btn" id="saveClientModal">Guardar</button>
+            </div>
+            <p id="clientModalMsg" class="muted"></p>
+        </div>
+    </div>
+
+<script src="assets/js/clients.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

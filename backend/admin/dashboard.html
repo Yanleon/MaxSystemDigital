@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | MaxSystemDigital</title>
+<link rel="stylesheet" href="assets/css/admin.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2 dashboard-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="brand-block">
+                <div class="brand-mark">CD</div>
+                <div>
+                    <h3>MAXSYSTEMDIGITAL</h3>
+                    <p class="muted">Panel de administracion</p>
+                </div>
+            </div>
+
+            <nav class="side-nav">
+                <div class="nav-group" data-open="true">
+                    <button type="button" class="nav-group-toggle" aria-expanded="true">GENERAL</button>
+                    <div class="nav-group-items">
+                        <a href="dashboard.html" class="active">Dashboard</a>
+                    </div>
+                </div>
+
+                <div class="nav-group" data-open="true">
+                    <button type="button" class="nav-group-toggle" aria-expanded="true">CONTENIDO</button>
+                    <div class="nav-group-items">
+                        <a href="contacts.html">Contactos</a>
+                        <a href="clients.html">Clientes</a>
+                        <a href="services.html">Servicios</a>
+                        <a href="portfolio.html">Portafolio</a>
+                        <a href="hero.html">Hero y Logo</a>
+                        <a href="plans.html">Planes</a>
+                        <a href="testimonials.html">Testimonios</a>
+                        <a href="about.html">Sobre Nosotros</a>
+                        <a href="seo.html">SEO</a>
+                        <a href="footer.html">Footer</a>
+                    </div>
+                </div>
+
+                <div class="nav-group" data-open="false">
+                    <button type="button" class="nav-group-toggle" aria-expanded="false">SISTEMA</button>
+                    <div class="nav-group-items">
+                        <a href="users.html">Usuarios</a>
+                        <a href="profile.html" class="profile-only">Perfil</a>
+                        <a href="support.html" class="support-only">Soporte</a>
+                        <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="support-box">
+                <h4>Necesitas ayuda?</h4>
+                <p>Soporte tecnico para ajustes y mantenimiento.</p>
+                <a class="btn secondary" href="support.html">Contactar soporte</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="admin-topbar">
+                <div class="dash-title">
+                    <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                    <h1>Dashboard</h1>
+                    <p class="muted">Resumen general de tu sitio web</p>
+                </div>
+
+                <div class="admin-search-wrap">
+                    <span class="search-ico">Q</span>
+                    <input type="search" placeholder="Buscar en el panel..." />
+                </div>
+
+                <div class="admin-top-actions">
+                    <button class="icon-btn" type="button" aria-label="Notificaciones">
+                        N
+                        <span class="dot">3</span>
+                    </button>
+                    <a href="profile.html" class="admin-user-chip" title="Ir a perfil">
+                        <span class="mini-avatar">AD</span>
+                        <div>
+                            <strong>Administrador</strong>
+                            <small>Super Admin</small>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <section class="dashboard-content">
+                    <section class="stat-row" id="stats">
+                        <div class="stat-card accent-blue">
+                            <p class="muted">Contactos recibidos</p>
+                            <div class="stat-value" id="statContacts">-</div>
+                            <span class="trend up">+12% vs la semana pasada</span>
+                        </div>
+                        <div class="stat-card accent-violet">
+                            <p class="muted">Servicios activos</p>
+                            <div class="stat-value" id="statServices">-</div>
+                            <span class="trend up">+8% vs la semana pasada</span>
+                        </div>
+                        <div class="stat-card accent-green">
+                            <p class="muted">Clientes activos</p>
+                            <div class="stat-value" id="statClients">-</div>
+                            <span class="trend up">+6% vs la semana pasada</span>
+                        </div>
+                        <div class="stat-card accent-orange">
+                            <p class="muted">Planes activos</p>
+                            <div class="stat-value">3</div>
+                            <span class="trend flat">Sin cambios</span>
+                        </div>
+                    </section>
+
+                    <section class="panel-grid two-col">
+                        <div class="panel-card">
+                            <div class="card-head">
+                                <h3>Resumen de visitas</h3>
+                                <span class="pill">Ultimos 7 dias</span>
+                            </div>
+                            <div class="fake-chart" aria-hidden="true"></div>
+                        </div>
+
+                        <div class="panel-card">
+                            <div class="card-head">
+                                <h3>Contactos recientes</h3>
+                                <a href="contacts.html" class="mini-link">Ver todos</a>
+                            </div>
+                            <div class="contact-list">
+                                <div class="contact-item"><strong>Maria Fernanda</strong><span>hace 15 min</span></div>
+                                <div class="contact-item"><strong>Carlos Gomez</strong><span>hace 1 hora</span></div>
+                                <div class="contact-item"><strong>Laura Martinez</strong><span>hace 2 horas</span></div>
+                                <div class="contact-item"><strong>Juan Camilo</strong><span>hace 3 horas</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="panel-grid two-col">
+                        <div class="panel-card">
+                            <h3>Accesos rapidos</h3>
+                            <div class="quick-grid">
+                                <a href="services.html" class="quick-item">Nuevo servicio</a>
+                                <a href="clients.html" class="quick-item">Nuevo cliente</a>
+                                <a href="plans.html" class="quick-item">Nuevo plan</a>
+                                <a href="testimonials.html" class="quick-item">Nuevo testimonio</a>
+                                <a href="contacts.html" class="quick-item">Ver contactos</a>
+                                <a href="portfolio.html" class="quick-item">Ver portafolio</a>
+                            </div>
+                        </div>
+
+                        <div class="panel-card">
+                            <h3>Contactos por tipo de proyecto</h3>
+                            <div class="donut-wrap">
+                                <div class="donut-center">
+                                    <strong id="donutTotal">28</strong>
+                                    <span>Contactos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <aside class="dashboard-side">
+                    <section class="panel-card">
+                        <h3>Estado del sitio</h3>
+                        <div class="status-list">
+                            <p><span>Sitio web</span><strong class="ok">Activo</strong></p>
+                            <p><span>Certificado SSL</span><strong class="ok">Activo</strong></p>
+                            <p><span>Copias de seguridad</span><strong class="ok">Al dia</strong></p>
+                            <p><span>Optimizacion SEO</span><strong class="warn">Bueno</strong></p>
+                        </div>
+                    </section>
+
+                    <section class="panel-card highlight-card">
+                        <h3>Quieres mas funcionalidades?</h3>
+                        <p class="muted">Mejora tu plan y obten mas herramientas.</p>
+                        <a class="btn" href="plans.html">Ver planes</a>
+                    </section>
+
+                    <section class="panel-card">
+                        <h3>Informacion del sistema</h3>
+                        <div class="status-list">
+                            <p><span>Laravel</span><strong>10.x</strong></p>
+                            <p><span>PHP</span><strong>8.2</strong></p>
+                            <p><span>Base de datos</span><strong>MySQL 8</strong></p>
+                            <p><span>Entorno</span><strong>Produccion</strong></p>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

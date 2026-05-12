@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero y Logo | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>MS</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="hero.html" class="active">Hero y Logo</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html">Trabajos</a>
+                <a href="about.html">Sobre Nosotros</a>
+                <a href="seo.html">SEO</a>
+                <a href="footer.html">Footer</a>
+                <a href="users.html">Usuarios</a>
+                <a href="support.html" class="support-only">Soporte</a>
+                <a href="profile.html" class="profile-only">Perfil</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesion</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Seccion principal del front</p>
+                    <h1>Hero y logo</h1>
+                </div>
+            </header>
+
+            <div class="card">
+                <h2>Configuracion editable</h2>
+                <form id="heroForm">
+                    <input type="text" id="brandName" placeholder="Nombre de marca" required>
+                    <input type="text" id="logoUrl" placeholder="Logo URL (opcional)">
+                    <input type="file" id="logoFile" accept="image/*">
+                    <input type="text" id="heroBadge" placeholder="Badge corto" required>
+                    <input type="text" id="heroTitle" placeholder="Titulo principal" required>
+                    <textarea id="heroSubtitle" rows="3" placeholder="Subtitulo" required></textarea>
+                    <input type="text" id="heroImage" placeholder="Imagen hero URL (opcional)">
+                    <input type="file" id="heroImageFile" accept="image/*">
+
+                    <div class="grid-3">
+                        <div>
+                            <label>CTA principal texto</label>
+                            <input type="text" id="ctaPrimaryText" placeholder="Solicitar cotizacion">
+                            <label>CTA principal enlace</label>
+                            <input type="text" id="ctaPrimaryLink" placeholder="#contacto">
+                        </div>
+                        <div>
+                            <label>CTA secundario texto</label>
+                            <input type="text" id="ctaSecondaryText" placeholder="Ver servicios">
+                            <label>CTA secundario enlace</label>
+                            <input type="text" id="ctaSecondaryLink" placeholder="#servicios">
+                        </div>
+                        <div>
+                            <label>Metrica superior</label>
+                            <input type="text" id="metricTopValue" placeholder="+120%">
+                            <input type="text" id="metricTopText" placeholder="Mejoras en alcance digital">
+                            <label>Metrica inferior</label>
+                            <input type="text" id="metricBottomValue" placeholder="24/7">
+                            <input type="text" id="metricBottomText" placeholder="Canales de atencion activa">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Guardar cambios</button>
+                    <span id="heroFormMsg" class="muted"></span>
+                </form>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | MaxSystemDigital</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="page admin-v2">
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="document.body.classList.remove('sidebar-open')"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="avatar"><span>CY</span></div>
+                <h3>MaxSystemDigital</h3>
+                <p class="muted">Admin Panel</p>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="contacts.html">Contactos</a>
+                <a href="clients.html">Clientes</a>
+                <a href="services.html">Servicios</a>
+                <a href="plans.html">Planes</a>
+                <a href="testimonials.html">Testimonios</a>
+                <a href="portfolio.html">Trabajos</a>
+                <a href="about.html">Sobre Nosotros</a>
+                <a href="seo.html">SEO</a>
+                <a href="footer.html">Footer</a>
+                <a href="users.html">Usuarios</a>
+                <a href="support.html" class="support-only">Soporte</a>
+                <a href="profile.html" class="active profile-only">Perfil</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dash-header">
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
+                <div>
+                    <p class="muted">Tu cuenta</p>
+                    <h1>Editar perfil</h1>
+                </div>
+                <button class="btn danger" id="logoutBtn">Cerrar sesión</button>
+            </header>
+
+            <div class="card">
+                <h2>Datos del usuario</h2>
+                <form id="profileForm">
+                    <input type="text" id="profileName" placeholder="Nombre" required>
+                    <input type="email" id="profileEmail" placeholder="Email" required>
+                    <input type="password" id="profilePass" placeholder="Nueva contraseña (opcional)" autocomplete="new-password">
+                    <button type="submit" class="btn">Guardar cambios</button>
+                    <span id="profileMsg" class="muted"></span>
+                </form>
+            </div>
+        </main>
+    </div>
+
+<script src="assets/js/profile.js"></script>
+<script src="assets/js/logout.js"></script>
+</body>
+</html>
