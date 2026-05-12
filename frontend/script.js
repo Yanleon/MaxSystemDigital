@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialsGrid = document.getElementById('testimonialsGrid');
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const themeToggle = document.getElementById('themeToggle');
     const heroImage = document.querySelector('.hero-image');
     let revealObserver = null;
 
@@ -54,23 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function applyTheme(theme) {
-        const isLight = theme === 'light';
-        document.body.classList.toggle('theme-light', isLight);
-        if (themeToggle) themeToggle.textContent = isLight ? 'Dark' : 'Light';
-    }
-
-    const savedTheme = localStorage.getItem('msd_theme');
-    applyTheme(savedTheme === 'light' ? 'light' : 'dark');
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const toLight = !document.body.classList.contains('theme-light');
-            const nextTheme = toLight ? 'light' : 'dark';
-            applyTheme(nextTheme);
-            localStorage.setItem('msd_theme', nextTheme);
-        });
-    }
+    document.body.classList.remove('theme-light');
+    localStorage.removeItem('msd_theme');
 
     if (heroImage) {
         heroImage.addEventListener('mousemove', (e) => {
