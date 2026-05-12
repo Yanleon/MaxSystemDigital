@@ -8,7 +8,7 @@ const baseFromAdmin = window.location.pathname.includes('/backend/admin/')
 const API_BASE = `${window.location.origin}${baseFromAdmin}/backend/public`;
 const API_LOGOUT = `${API_BASE}/logout`;
 const API_ME = `${API_BASE}/me`;
-const FRONT_HOME = `${window.location.origin}${baseFromAdmin}/frontend/index.html`;
+const FRONT_HOME = `${window.location.origin}${baseFromAdmin}/`;
 
 function openSidebar() {
     document.body.classList.add('sidebar-open');
