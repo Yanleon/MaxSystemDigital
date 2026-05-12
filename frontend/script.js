@@ -255,7 +255,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (heroTitle && h.title) heroTitle.textContent = h.title;
             if (heroSubtitle && h.subtitle) heroSubtitle.textContent = h.subtitle;
             if (heroImage && h.image) heroImage.src = resolveImage(h.image);
-            if (siteFavicon && h.favicon) siteFavicon.href = resolveImage(h.favicon);
+            if (siteFavicon) {
+                if (h.favicon) {
+                    siteFavicon.href = resolveImage(h.favicon);
+                } else if (h.logo) {
+                    siteFavicon.href = resolveImage(h.logo);
+                }
+            }
 
             if (heroPrimaryCta) {
                 if (h.cta_primary_text) heroPrimaryCta.textContent = h.cta_primary_text;
