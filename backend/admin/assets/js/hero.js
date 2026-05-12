@@ -3,6 +3,14 @@ const baseFromAdmin = window.location.pathname.includes('/backend/admin/')
     : '';
 const API = `${window.location.origin}${baseFromAdmin}/backend/public`;
 const formMsg = document.getElementById('heroFormMsg');
+const adminFavicon = document.getElementById('adminFavicon');
+
+function resolveAsset(path) {
+    if (!path) return '';
+    if (/^https?:\/\//i.test(path)) return path;
+    const normalized = path.startsWith('/') ? path : `/${path}`;
+    return `${API}${normalized}`;
+}
 
 async function loadHero() {
     try {
@@ -13,6 +21,7 @@ async function loadHero() {
         const h = data.hero;
         document.getElementById('brandName').value = h.brand_name || '';
         document.getElementById('logoUrl').value = h.logo || '';
+        document.getElementById('faviconUrl').value = h.favicon || '';
         document.getElementById('heroBadge').value = h.badge || '';
         document.getElementById('heroTitle').value = h.title || '';
         document.getElementById('heroSubtitle').value = h.subtitle || '';
@@ -25,6 +34,10 @@ async function loadHero() {
         document.getElementById('metricTopText').value = h.metric_top_text || '';
         document.getElementById('metricBottomValue').value = h.metric_bottom_value || '';
         document.getElementById('metricBottomText').value = h.metric_bottom_text || '';
+
+        if (adminFavicon && h.favicon) {
+            adminFavicon.href = resolveAsset(h.favicon);
+        }
     } catch (_) {
         formMsg.textContent = 'No se pudo cargar Hero';
         formMsg.className = 'error';
@@ -38,6 +51,7 @@ document.getElementById('heroForm').addEventListener('submit', async (e) => {
     const payload = {
         brand_name: document.getElementById('brandName').value.trim(),
         logo: document.getElementById('logoUrl').value.trim(),
+        favicon: document.getElementById('faviconUrl').value.trim(),
         badge: document.getElementById('heroBadge').value.trim(),
         title: document.getElementById('heroTitle').value.trim(),
         subtitle: document.getElementById('heroSubtitle').value.trim(),
@@ -56,8 +70,10 @@ document.getElementById('heroForm').addEventListener('submit', async (e) => {
     Object.entries(payload).forEach(([key, value]) => formData.append(key, value));
 
     const logoFile = document.getElementById('logoFile').files[0];
+    const faviconFile = document.getElementById('faviconFile').files[0];
     const heroImageFile = document.getElementById('heroImageFile').files[0];
     if (logoFile) formData.append('logo_file', logoFile);
+    if (faviconFile) formData.append('favicon_file', faviconFile);
     if (heroImageFile) formData.append('image_file', heroImageFile);
 
     try {

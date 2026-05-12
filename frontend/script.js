@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const heroImage = document.getElementById('heroImage');
             const heroPrimaryCta = document.getElementById('heroPrimaryCta');
             const heroSecondaryCta = document.getElementById('heroSecondaryCta');
+            const siteFavicon = document.getElementById('siteFavicon');
             const topValue = document.getElementById('heroTopMetricValue');
             const topText = document.getElementById('heroTopMetricText');
             const bottomValue = document.getElementById('heroBottomMetricValue');
@@ -254,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (heroTitle && h.title) heroTitle.textContent = h.title;
             if (heroSubtitle && h.subtitle) heroSubtitle.textContent = h.subtitle;
             if (heroImage && h.image) heroImage.src = resolveImage(h.image);
+            if (siteFavicon && h.favicon) siteFavicon.href = resolveImage(h.favicon);
 
             if (heroPrimaryCta) {
                 if (h.cta_primary_text) heroPrimaryCta.textContent = h.cta_primary_text;

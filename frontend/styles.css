@@ -14,7 +14,23 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--text);
@@ -23,6 +39,7 @@ body {
         radial-gradient(circle at 85% 12%, rgba(34, 211, 238, 0.14) 0%, transparent 25%),
         linear-gradient(180deg, #020713, #07112a 38%, #050b1a 100%);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container { width: min(1180px, 92%); margin: 0 auto; }

@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS hero_sections (
     id INT AUTO_INCREMENT PRIMARY KEY,
     brand_name VARCHAR(120) NOT NULL,
     logo VARCHAR(255) NULL,
+    favicon VARCHAR(255) NULL,
     badge VARCHAR(180) NOT NULL,
     title VARCHAR(255) NOT NULL,
     subtitle TEXT NOT NULL,
@@ -59,12 +60,13 @@ CREATE TABLE IF NOT EXISTS hero_sections (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO hero_sections (
-    brand_name, logo, badge, title, subtitle, image,
+    brand_name, logo, favicon, badge, title, subtitle, image,
     cta_primary_text, cta_primary_link, cta_secondary_text, cta_secondary_link,
     metric_top_value, metric_top_text, metric_bottom_value, metric_bottom_text
 )
 SELECT
     'MAXSYSTEMDIGITAL',
+    '',
     '',
     'Soluciones digitales para crecer tu negocio',
     'Creamos experiencias web que convierten visitas en clientes',

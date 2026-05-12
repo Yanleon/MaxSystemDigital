@@ -32,6 +32,17 @@ class HeroController
             $logo = $upload['path'];
         }
 
+        $favicon = trim($input['favicon'] ?? '');
+        if (!empty($_FILES['favicon_file']['tmp_name'])) {
+            $upload = $this->handleUpload($_FILES['favicon_file'], 'favicon_', 'favicons');
+            if (!$upload['ok']) {
+                http_response_code(400);
+                echo json_encode(['error' => $upload['error']]);
+                return;
+            }
+            $favicon = $upload['path'];
+        }
+
         $image = trim($input['image'] ?? '');
         if (!empty($_FILES['image_file']['tmp_name'])) {
             $upload = $this->handleUpload($_FILES['image_file'], 'image_', 'hero');
@@ -55,6 +66,7 @@ class HeroController
         $data = [
             'brand_name' => trim($input['brand_name']),
             'logo' => $logo,
+            'favicon' => $favicon,
             'badge' => trim($input['badge']),
             'title' => trim($input['title']),
             'subtitle' => trim($input['subtitle']),

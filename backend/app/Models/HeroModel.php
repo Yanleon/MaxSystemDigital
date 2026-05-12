@@ -9,6 +9,7 @@ class HeroModel
     public function __construct()
     {
         $this->db = Connection::connect();
+        $this->ensureSchema();
     }
 
     public function get()
@@ -26,6 +27,7 @@ class HeroModel
             $sql = "UPDATE hero_sections SET
                 brand_name = :brand_name,
                 logo = :logo,
+                favicon = :favicon,
                 badge = :badge,
                 title = :title,
                 subtitle = :subtitle,
@@ -46,15 +48,28 @@ class HeroModel
         }
 
         $sql = "INSERT INTO hero_sections (
-                brand_name, logo, badge, title, subtitle, image,
+                brand_name, logo, favicon, badge, title, subtitle, image,
                 cta_primary_text, cta_primary_link, cta_secondary_text, cta_secondary_link,
                 metric_top_value, metric_top_text, metric_bottom_value, metric_bottom_text
             ) VALUES (
-                :brand_name, :logo, :badge, :title, :subtitle, :image,
+                :brand_name, :logo, :favicon, :badge, :title, :subtitle, :image,
                 :cta_primary_text, :cta_primary_link, :cta_secondary_text, :cta_secondary_link,
                 :metric_top_value, :metric_top_text, :metric_bottom_value, :metric_bottom_text
             )";
         $stmt = $this->db->prepare($sql);
         $stmt->execute($data);
+    }
+
+    private function ensureSchema()
+    {
+        try {
+            $stmt = $this->db->query("SHOW COLUMNS FROM hero_sections LIKE 'favicon'");
+            $exists = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$exists) {
+                $this->db->exec("ALTER TABLE hero_sections ADD COLUMN favicon VARCHAR(255) NULL AFTER logo");
+            }
+        } catch (Throwable $e) {
+            // Ignorar para no bloquear lecturas si la migracion falla.
+        }
     }
 }
