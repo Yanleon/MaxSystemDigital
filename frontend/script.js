@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const heroImage = document.querySelector('.hero-image');
+    const footerAccordionToggles = document.querySelectorAll('.footer-accordion-toggle');
     let revealObserver = null;
 
     const baseFromFrontend = window.location.pathname.includes('/frontend/')
@@ -56,6 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('theme-light');
     localStorage.removeItem('msd_theme');
 
+    footerAccordionToggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+            const item = toggle.closest('.footer-accordion');
+            if (!item) return;
+            const expanded = item.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        });
+    });
+
     if (heroImage) {
         heroImage.addEventListener('mousemove', (e) => {
             const rect = heroImage.getBoundingClientRect();
@@ -70,6 +80,33 @@ document.addEventListener('DOMContentLoaded', () => {
             heroImage.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
         });
     }
+
+    function initClientLogoTilt() {
+        if (window.matchMedia('(max-width: 768px)').matches) return;
+
+        const logos = document.querySelectorAll('.client-logo');
+        logos.forEach((logo) => {
+            if (logo.dataset.tiltBound === '1') return;
+            logo.dataset.tiltBound = '1';
+
+            logo.addEventListener('mousemove', (e) => {
+                const rect = logo.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+
+                const rotateY = (x - 0.5) * 12;
+                const rotateX = (0.5 - y) * 10;
+
+                logo.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            logo.addEventListener('mouseleave', () => {
+                logo.style.transform = '';
+            });
+        });
+    }
+
+    initClientLogoTilt();
 
     /* =========================
        Contador de caracteres
@@ -297,6 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             observeRevealTargets();
+            initClientLogoTilt();
         } catch (err) {
             // Silencioso, se mantienen los valores estáticos
         }
