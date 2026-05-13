@@ -487,15 +487,46 @@ section { padding: 88px 0; position: relative; }
     gap: 14px;
     overflow: hidden;
     position: relative;
-    padding: 0 46px;
+    padding: 18px 46px 26px;
 }
 
 .clients-grid.marquee .client-logo {
     flex: 0 0 180px;
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(154, 195, 255, 0.14), transparent 45%),
+        linear-gradient(155deg, rgba(20, 35, 76, 0.92), rgba(8, 18, 44, 0.92));
 }
 
 .clients-grid.marquee .client-logo:hover {
     transform: translateY(-4px) rotateX(5deg) rotateY(-6deg);
+}
+
+.clients-grid.marquee .marquee-track {
+    padding-top: 6px;
+}
+
+.clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 1),
+.clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 6) {
+    transform: translateY(20px);
+}
+
+.clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 2),
+.clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 5) {
+    transform: translateY(10px);
+}
+
+.clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 3),
+.clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 4) {
+    transform: translateY(0);
+}
+
+.clients-grid.marquee .marquee-track .client-logo {
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+}
+
+.clients-grid.marquee .marquee-track .client-logo:hover {
+    transform: translateY(-8px) rotateX(6deg) rotateY(-7deg) scale(1.02);
 }
 
 .clients-grid.marquee .marquee-track {

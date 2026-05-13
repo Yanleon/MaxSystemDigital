@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const logos = document.querySelectorAll('.client-logo');
         logos.forEach((logo) => {
+            if (logo.closest('.clients-grid.marquee')) return;
             if (logo.dataset.tiltBound === '1') return;
             logo.dataset.tiltBound = '1';
 
