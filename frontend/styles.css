@@ -496,6 +496,7 @@ section { padding: 88px 0; position: relative; }
     background:
         radial-gradient(circle at 20% 10%, rgba(154, 195, 255, 0.14), transparent 45%),
         linear-gradient(155deg, rgba(20, 35, 76, 0.92), rgba(8, 18, 44, 0.92));
+    animation: none;
 }
 
 .clients-grid.marquee .client-logo:hover {
@@ -503,22 +504,22 @@ section { padding: 88px 0; position: relative; }
 }
 
 .clients-grid.marquee .marquee-track {
-    padding-top: 6px;
+    padding-top: 2px;
 }
 
 .clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 1),
 .clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 6) {
-    transform: translateY(20px);
+    margin-top: 30px;
 }
 
 .clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 2),
 .clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 5) {
-    transform: translateY(10px);
+    margin-top: 16px;
 }
 
 .clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 3),
 .clients-grid.marquee .marquee-track .client-logo:nth-child(6n + 4) {
-    transform: translateY(0);
+    margin-top: 4px;
 }
 
 .clients-grid.marquee .marquee-track .client-logo {
@@ -526,7 +527,7 @@ section { padding: 88px 0; position: relative; }
 }
 
 .clients-grid.marquee .marquee-track .client-logo:hover {
-    transform: translateY(-8px) rotateX(6deg) rotateY(-7deg) scale(1.02);
+    transform: translateY(-10px) rotateX(6deg) rotateY(-7deg) scale(1.02);
 }
 
 .clients-grid.marquee .marquee-track {
