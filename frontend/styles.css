@@ -492,11 +492,20 @@ section { padding: 88px 0; position: relative; }
 
 .clients-grid.marquee .client-logo {
     flex: 0 0 180px;
+    min-height: 100px;
     border-radius: 18px;
     background:
         radial-gradient(circle at 20% 10%, rgba(154, 195, 255, 0.14), transparent 45%),
         linear-gradient(155deg, rgba(20, 35, 76, 0.92), rgba(8, 18, 44, 0.92));
     animation: none;
+}
+
+.clients-grid.marquee .client-logo img {
+    width: 136px;
+    height: 52px;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
 }
 
 .clients-grid.marquee .client-logo:hover {
