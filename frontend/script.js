@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const h = data.hero;
             const logoText = document.getElementById('logoText');
             const logoImg = document.getElementById('siteLogo');
+            const logoMark = document.querySelector('.logo-mark');
             const heroBadge = document.getElementById('heroBadge');
             const heroTitle = document.getElementById('heroTitle');
             const heroSubtitle = document.getElementById('heroSubtitle');
@@ -273,8 +274,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (h.logo) {
                     logoImg.src = resolveImage(h.logo);
                     logoImg.style.display = 'inline-block';
+                    if (logoMark) logoMark.style.display = 'none';
                 } else {
                     logoImg.style.display = 'none';
+                    if (logoMark) logoMark.style.display = 'inline-flex';
                 }
             }
 
