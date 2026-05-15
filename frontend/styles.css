@@ -1,14 +1,14 @@
 :root {
-    --bg-main: #050b1a;
-    --bg-soft: #0b1531;
-    --panel: rgba(11, 20, 46, 0.78);
-    --panel-border: rgba(111, 158, 255, 0.3);
-    --text: #ebf2ff;
-    --muted: #9eb4d9;
-    --primary: #4e7cff;
-    --accent: #22d3ee;
-    --success: #3ddc97;
-    --line: rgba(134, 173, 255, 0.25);
+    --bg-main: #081018;
+    --bg-soft: #101c29;
+    --panel: rgba(15, 27, 40, 0.78);
+    --panel-border: rgba(93, 180, 245, 0.28);
+    --text: #f2f7ff;
+    --muted: #afc4db;
+    --primary: #ff7a18;
+    --accent: #2ec5ce;
+    --success: #36d38d;
+    --line: rgba(114, 186, 236, 0.25);
     --font-title: 'Space Grotesk', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 }
@@ -40,9 +40,9 @@ body {
     font-family: var(--font-body);
     color: var(--text);
     background:
-        radial-gradient(circle at 10% 20%, rgba(78, 124, 255, 0.2) 0%, transparent 30%),
-        radial-gradient(circle at 85% 12%, rgba(34, 211, 238, 0.14) 0%, transparent 25%),
-        linear-gradient(180deg, #020713, #07112a 38%, #050b1a 100%);
+        radial-gradient(circle at 8% 14%, rgba(255, 122, 24, 0.22) 0%, transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(46, 197, 206, 0.16) 0%, transparent 28%),
+        linear-gradient(180deg, #050b13, #0b141f 42%, #081018 100%);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -88,15 +88,15 @@ section { padding: 88px 0; position: relative; }
 .btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary), #6ea1ff);
+    background: linear-gradient(135deg, #ff7a18, #ff9b3d);
     color: #fff;
-    box-shadow: 0 10px 30px rgba(78, 124, 255, 0.45);
+    box-shadow: 0 12px 30px rgba(255, 122, 24, 0.35);
 }
 
 .btn-ghost {
-    background: rgba(18, 34, 72, 0.6);
-    border-color: rgba(155, 189, 255, 0.4);
-    color: #cfe0ff;
+    background: rgba(28, 47, 66, 0.56);
+    border-color: rgba(109, 190, 240, 0.34);
+    color: #ddedf9;
 }
 
 .btn-whatsapp {
@@ -108,8 +108,8 @@ section { padding: 88px 0; position: relative; }
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 1500;
-    border-bottom: 1px solid rgba(153, 182, 255, 0.22);
-    background: rgba(3, 9, 24, 0.72);
+    border-bottom: 1px solid rgba(99, 178, 238, 0.24);
+    background: rgba(7, 16, 27, 0.74);
     backdrop-filter: blur(14px);
 }
 
@@ -130,8 +130,8 @@ section { padding: 88px 0; position: relative; }
     align-items: center;
     justify-content: center;
     color: #d8e8ff;
-    background: linear-gradient(135deg, #3f72ff, #22d3ee);
-    box-shadow: 0 0 24px rgba(51, 132, 255, 0.5);
+    background: linear-gradient(135deg, #ff7a18, #2ec5ce);
+    box-shadow: 0 0 24px rgba(38, 163, 190, 0.45);
 }
 
 .logo-text {
@@ -194,9 +194,9 @@ section { padding: 88px 0; position: relative; }
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(74, 112, 210, 0.09) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(74, 112, 210, 0.09) 1px, transparent 1px);
-    background-size: 48px 48px;
+        linear-gradient(rgba(79, 153, 212, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 153, 212, 0.08) 1px, transparent 1px);
+    background-size: 44px 44px;
     pointer-events: none;
 }
 
@@ -207,7 +207,7 @@ section { padding: 88px 0; position: relative; }
     height: 760px;
     right: -220px;
     top: -240px;
-    background: radial-gradient(circle, rgba(53, 119, 255, 0.45) 0%, rgba(34, 211, 238, 0.18) 35%, transparent 68%);
+    background: radial-gradient(circle, rgba(255, 122, 24, 0.34) 0%, rgba(46, 197, 206, 0.22) 38%, transparent 70%);
     filter: blur(10px);
     animation: auroraPulse 8s ease-in-out infinite alternate;
     pointer-events: none;
@@ -223,9 +223,9 @@ section { padding: 88px 0; position: relative; }
 .hero-badge {
     display: inline-block;
     border-radius: 999px;
-    border: 1px solid rgba(143, 178, 255, 0.4);
-    background: rgba(78, 124, 255, 0.14);
-    color: #d3e4ff;
+    border: 1px solid rgba(127, 199, 241, 0.42);
+    background: rgba(39, 71, 100, 0.45);
+    color: #d9ecff;
     font-size: 0.86rem;
     padding: 7px 13px;
     margin-bottom: 16px;
@@ -252,7 +252,7 @@ section { padding: 88px 0; position: relative; }
     position: relative;
     border-radius: 18px;
     overflow: hidden;
-    border: 1px solid rgba(140, 175, 255, 0.42);
+    border: 1px solid rgba(102, 188, 241, 0.42);
     box-shadow: 0 24px 56px rgba(6, 14, 35, 0.6);
     animation: heroPanelDrift 6.5s ease-in-out infinite;
 }
@@ -341,7 +341,7 @@ section { padding: 88px 0; position: relative; }
 .clients,
 .portfolio,
 .contact-form-section {
-    background: linear-gradient(180deg, rgba(8, 16, 36, 0.58), rgba(6, 13, 31, 0.56));
+    background: linear-gradient(180deg, rgba(11, 24, 38, 0.58), rgba(8, 20, 32, 0.6));
 }
 
 .services-grid,
@@ -368,6 +368,7 @@ section { padding: 88px 0; position: relative; }
     background: var(--panel);
     border: 1px solid var(--panel-border);
     border-radius: 15px;
+    box-shadow: inset 0 1px 0 rgba(191, 232, 255, 0.08);
 }
 
 .service-card,
@@ -410,7 +411,7 @@ section { padding: 88px 0; position: relative; }
 }
 .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(8, 16, 38, 0.5); }
 .service-card:hover .service-icon { animation: iconPulse 0.9s ease; }
-.service-icon { color: #94b8ff; font-size: 1.55rem; margin-bottom: 10px; }
+.service-icon { color: #6fd5de; font-size: 1.55rem; margin-bottom: 10px; }
 .service-title { font-family: var(--font-title); margin-bottom: 8px; }
 .service-description { color: var(--muted); font-size: 0.94rem; }
 
@@ -418,6 +419,9 @@ section { padding: 88px 0; position: relative; }
     max-width: 780px;
     margin: 0 auto 20px;
     padding: 24px;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(255, 122, 24, 0.1) 0%, transparent 35%),
+        var(--panel);
 }
 
 .form-group { margin-bottom: 15px; }
@@ -590,12 +594,16 @@ body.theme-light .clients-grid.marquee::after {
 .plan-card li { margin-bottom: 8px; color: #d7e6ff; }
 .plan-card li::before { content: '✔'; margin-right: 8px; color: var(--success); }
 .plan-card-popular { border-color: rgba(34, 211, 238, 0.48); box-shadow: 0 16px 32px rgba(4, 25, 61, 0.52); }
+.plan-card-popular {
+    border-color: rgba(255, 155, 61, 0.62);
+    box-shadow: 0 16px 34px rgba(4, 25, 61, 0.52), 0 0 0 1px rgba(255, 122, 24, 0.16);
+}
 .popular-tag {
     position: absolute;
     top: -10px;
     right: 14px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #1f9fff, #22d3ee);
+    background: linear-gradient(135deg, #ff7a18, #2ec5ce);
     color: #fff;
     font-size: 0.75rem;
     padding: 5px 9px;
@@ -631,9 +639,9 @@ body.theme-light .clients-grid.marquee::after {
 .contact-form-section::before { left: -70px; top: 26px; animation-delay: 3.5s; }
 
 .cta-band {
-    background: linear-gradient(135deg, rgba(13, 33, 75, 0.96), rgba(22, 58, 140, 0.88));
-    border-top: 1px solid rgba(138, 173, 252, 0.35);
-    border-bottom: 1px solid rgba(138, 173, 252, 0.35);
+    background: linear-gradient(120deg, rgba(27, 66, 83, 0.96), rgba(29, 101, 124, 0.9), rgba(230, 112, 29, 0.86));
+    border-top: 1px solid rgba(130, 208, 236, 0.35);
+    border-bottom: 1px solid rgba(130, 208, 236, 0.35);
 }
 
 .cta-band-inner {
@@ -647,8 +655,8 @@ body.theme-light .clients-grid.marquee::after {
 .cta-band p { color: #b6caea; }
 
 .footer {
-    background: #030816;
-    border-top: 1px solid rgba(130, 166, 245, 0.3);
+    background: #050d16;
+    border-top: 1px solid rgba(98, 173, 230, 0.32);
     padding: 58px 0 18px;
 }
 
