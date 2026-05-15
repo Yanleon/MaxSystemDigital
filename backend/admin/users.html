@@ -22,6 +22,7 @@
                 <a href="contacts.html">Contactos</a>
                 <a href="clients.html">Clientes</a>
                 <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
                 <a href="plans.html">Planes</a>
                 <a href="testimonials.html">Testimonios</a>
                 <a href="portfolio.html">Trabajos</a>
@@ -38,11 +39,13 @@
         <main class="dashboard-main">
             <header class="dash-header">
                 <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
-                <div>
+                <div class="page-intro">
                     <p class="muted">Gestión de usuarios</p>
                     <h1>Usuarios</h1>
                 </div>
-                <button class="btn danger" id="logoutBtn">Cerrar sesión</button>
+                <div class="header-actions">
+                    <button class="btn danger" id="logoutBtn">Cerrar sesión</button>
+                </div>
             </header>
 
             <div class="card">
@@ -61,7 +64,7 @@
                 </form>
             </div>
 
-            <div class="card" style="margin-top:14px;">
+            <div class="card card-list">
                 <h2>Listado</h2>
                 <table>
                     <thead>

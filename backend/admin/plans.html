@@ -22,6 +22,7 @@
                 <a href="contacts.html">Contactos</a>
                 <a href="clients.html">Clientes</a>
                 <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
                 <a href="plans.html" class="active">Planes</a>
                 <a href="testimonials.html">Testimonios</a>
                 <a href="portfolio.html">Trabajos</a>
@@ -38,7 +39,7 @@
         <main class="dashboard-main">
             <header class="dash-header">
                 <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
-                <div>
+                <div class="page-intro">
                     <p class="muted">Gestión de planes editables</p>
                     <h1>Planes</h1>
                 </div>
@@ -51,17 +52,17 @@
                     <textarea id="planDescription" rows="3" placeholder="Descripción" required></textarea>
                     <textarea id="planBenefits" rows="4" placeholder="Beneficios (uno por línea)"></textarea>
                     <input type="text" id="planPrice" placeholder="Texto de precio (ej. Cotizar ahora)">
-                    <label style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
-                        <input type="checkbox" id="planActive" checked style="width:auto;margin:0;"> Activo
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="planActive" checked> Activo
                     </label>
                     <button type="submit" class="btn">Guardar plan</button>
                     <span id="planFormMsg" class="muted"></span>
                 </form>
             </div>
 
-            <div class="card" style="margin-top:14px;">
+            <div class="card card-list">
                 <h2>Listado</h2>
-                <div style="max-width:260px; margin-bottom:10px;">
+                <div class="filter-inline">
                     <select id="plansFilter">
                         <option value="all">Todos</option>
                         <option value="active">Solo activos</option>
@@ -87,7 +88,7 @@
         </main>
     </div>
 
-    <div id="planModal" class="modal-backdrop" style="display:none;">
+    <div id="planModal" class="modal-backdrop is-hidden">
         <div class="modal">
             <h3>Editar plan</h3>
             <label for="editPlanName">Nombre</label>
@@ -98,8 +99,8 @@
             <textarea id="editPlanBenefits" rows="4"></textarea>
             <label for="editPlanPrice">Texto de precio</label>
             <input type="text" id="editPlanPrice">
-            <label style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
-                <input type="checkbox" id="editPlanActive" style="width:auto;margin:0;"> Activo
+            <label class="checkbox-row">
+                <input type="checkbox" id="editPlanActive"> Activo
             </label>
             <div class="modal-actions">
                 <button class="btn secondary" id="closePlanModal">Cancelar</button>

@@ -22,6 +22,7 @@
                 <a href="contacts.html">Contactos</a>
                 <a href="clients.html" class="active">Clientes</a>
                 <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
                 <a href="plans.html">Planes</a>
                 <a href="testimonials.html">Testimonios</a>
                 <a href="portfolio.html">Trabajos</a>
@@ -38,7 +39,7 @@
         <main class="dashboard-main">
             <header class="dash-header">
                 <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
-                <div>
+                <div class="page-intro">
                     <p class="muted">Gestión de clientes</p>
                     <h1>Nuestros Clientes</h1>
                 </div>
@@ -46,7 +47,7 @@
 
             <div class="card">
                 <h2>Textos de la seccion clientes</h2>
-                <form id="clientsSectionForm" style="margin-bottom: 14px;">
+                <form id="clientsSectionForm" class="form-gap-bottom">
                     <input type="text" id="clientsKicker" placeholder="Kicker (ej. CLIENTES)">
                     <input type="text" id="clientsTitle" placeholder="Titulo de seccion" required>
                     <textarea id="clientsSubtitle" rows="2" placeholder="Subtitulo" required></textarea>
@@ -64,7 +65,7 @@
                 </form>
             </div>
 
-            <div class="card" style="margin-top:14px;">
+            <div class="card card-list">
                 <h2>Listado</h2>
                 <table>
                     <thead>
@@ -84,7 +85,7 @@
     </div>
 
     <!-- Modal edición cliente -->
-    <div id="clientModal" class="modal-backdrop" style="display:none;">
+    <div id="clientModal" class="modal-backdrop is-hidden">
         <div class="modal">
             <h3>Editar cliente</h3>
             <label for="editClientName">Nombre</label>

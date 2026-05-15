@@ -22,6 +22,7 @@
                 <a href="contacts.html">Contactos</a>
                 <a href="clients.html">Clientes</a>
                 <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
                 <a href="plans.html">Planes</a>
                 <a href="testimonials.html" class="active">Testimonios</a>
                 <a href="portfolio.html">Trabajos</a>
@@ -38,7 +39,7 @@
         <main class="dashboard-main">
             <header class="dash-header">
                 <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
-                <div>
+                <div class="page-intro">
                     <p class="muted">Gestión de testimonios</p>
                     <h1>Testimonios</h1>
                 </div>
@@ -50,17 +51,17 @@
                     <input type="text" id="tAuthor" placeholder="Nombre del autor" required>
                     <input type="text" id="tRole" placeholder="Cargo o empresa (opcional)">
                     <textarea id="tContent" rows="4" placeholder="Contenido del testimonio" required></textarea>
-                    <label style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
-                        <input type="checkbox" id="tActive" checked style="width:auto;margin:0;"> Activo
+                    <label class="checkbox-row">
+                        <input type="checkbox" id="tActive" checked> Activo
                     </label>
                     <button type="submit" class="btn">Guardar testimonio</button>
                     <span id="testimonialFormMsg" class="muted"></span>
                 </form>
             </div>
 
-            <div class="card" style="margin-top:14px;">
+            <div class="card card-list">
                 <h2>Listado</h2>
-                <div style="max-width:260px; margin-bottom:10px;">
+                <div class="filter-inline">
                     <select id="testimonialsFilter">
                         <option value="all">Todos</option>
                         <option value="active">Solo activos</option>
@@ -86,7 +87,7 @@
         </main>
     </div>
 
-    <div id="testimonialModal" class="modal-backdrop" style="display:none;">
+    <div id="testimonialModal" class="modal-backdrop is-hidden">
         <div class="modal">
             <h3>Editar testimonio</h3>
             <label for="editTAuthor">Autor</label>
@@ -95,8 +96,8 @@
             <input type="text" id="editTRole">
             <label for="editTContent">Contenido</label>
             <textarea id="editTContent" rows="4"></textarea>
-            <label style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
-                <input type="checkbox" id="editTActive" style="width:auto;margin:0;"> Activo
+            <label class="checkbox-row">
+                <input type="checkbox" id="editTActive"> Activo
             </label>
             <div class="modal-actions">
                 <button class="btn secondary" id="closeTestimonialModal">Cancelar</button>

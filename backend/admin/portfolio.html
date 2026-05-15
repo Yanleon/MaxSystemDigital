@@ -22,6 +22,7 @@
                 <a href="contacts.html">Contactos</a>
                 <a href="clients.html">Clientes</a>
                 <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
                 <a href="plans.html">Planes</a>
                 <a href="testimonials.html">Testimonios</a>
                 <a href="portfolio.html" class="active">Trabajos</a>
@@ -38,7 +39,7 @@
         <main class="dashboard-main">
             <header class="dash-header">
                 <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
-                <div>
+                <div class="page-intro">
                     <p class="muted">Gestión de trabajos</p>
                     <h1>Trabajos Realizados</h1>
                 </div>
@@ -56,7 +57,7 @@
                 </form>
             </div>
 
-            <div class="card" style="margin-top:14px;">
+            <div class="card card-list">
                 <h2>Listado</h2>
                 <table>
                     <thead>
@@ -75,7 +76,7 @@
             </div>
 
             <!-- Modal edición -->
-            <div id="portfolioModal" class="modal-backdrop" style="display:none;">
+            <div id="portfolioModal" class="modal-backdrop is-hidden">
                 <div class="modal">
                     <h3>Editar proyecto</h3>
                     <label for="editPortfolioTitle">Título</label>

@@ -39,7 +39,7 @@
         <main class="dashboard-main">
             <header class="dash-header">
                 <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
-                <div>
+                <div class="page-intro">
                     <p class="muted">Sección pública</p>
                     <h1>Footer</h1>
                 </div>
@@ -51,7 +51,7 @@
                     <input type="text" id="brandTitle" placeholder="Titulo de marca (ej. MAXSYSTEMDIGITAL)" required>
                     <input type="text" id="tagline" placeholder="Tagline" required>
 
-                    <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px;">
+                    <div class="grid-3 grid-3-tight">
                         <div>
                             <label>Facebook</label>
                             <input type="text" id="facebook" placeholder="https://facebook.com/...">

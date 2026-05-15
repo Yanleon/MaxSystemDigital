@@ -22,6 +22,7 @@
                 <a href="contacts.html">Contactos</a>
                 <a href="clients.html">Clientes</a>
                 <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
                 <a href="plans.html">Planes</a>
                 <a href="testimonials.html">Testimonios</a>
                 <a href="portfolio.html">Trabajos</a>
@@ -38,7 +39,7 @@
         <main class="dashboard-main">
             <header class="dash-header">
                 <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
-                <div>
+                <div class="page-intro">
                     <p class="muted">Optimizacion</p>
                     <h1>Configuracion SEO</h1>
                 </div>
@@ -79,7 +80,7 @@
                         <label for="ogTitle">OG title</label>
                         <input id="ogTitle" type="text" maxlength="160" placeholder="Titulo para compartir en redes">
                     </div>
-                    <div style="grid-column: span 2;">
+                    <div class="span-2">
                         <label for="ogDescription">OG description</label>
                         <input id="ogDescription" type="text" placeholder="Descripcion para redes sociales">
                     </div>
@@ -88,7 +89,7 @@
                 <label for="schemaJson">Schema JSON-LD</label>
                 <textarea id="schemaJson" rows="8" placeholder='{"@context":"https://schema.org","@type":"Organization"}'></textarea>
 
-                <div class="actions" style="margin-top: 10px;">
+                <div class="actions top-gap-sm">
                     <button class="btn" id="saveSeoBtn">Guardar SEO</button>
                     <button class="btn secondary" id="resetSeoBtn">Recargar</button>
                 </div>

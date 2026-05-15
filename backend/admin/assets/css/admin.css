@@ -1212,3 +1212,264 @@ th, td {
         display: block;
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/* UX refresh for non-dashboard admin views                                   */
+/* -------------------------------------------------------------------------- */
+.admin-v2:not(.dashboard-v2) {
+    --admin-bg: #f4f7fc;
+    --admin-surface: #ffffff;
+    --admin-surface-soft: #f7faff;
+    --admin-border: #dbe5f4;
+    --admin-text: #223758;
+    --admin-muted: #637a9f;
+    --admin-primary: #245fda;
+    --admin-primary-soft: #eaf1ff;
+    --admin-shadow: 0 16px 34px rgba(19, 49, 104, 0.08);
+    background:
+        radial-gradient(1300px 660px at -10% -12%, rgba(36, 95, 218, 0.12), transparent 46%),
+        radial-gradient(1100px 560px at 102% -18%, rgba(24, 146, 189, 0.1), transparent 44%),
+        var(--admin-bg);
+    color: var(--admin-text);
+}
+
+.admin-v2:not(.dashboard-v2) .muted {
+    color: var(--admin-muted);
+}
+
+.admin-v2:not(.dashboard-v2) .dashboard-layout {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 18px;
+    padding: 14px;
+}
+
+.admin-v2:not(.dashboard-v2) .sidebar {
+    background: linear-gradient(190deg, #0a1d4b 0%, #0a214f 42%, #102d66 100%);
+    border: 1px solid rgba(127, 166, 237, 0.25);
+    border-radius: 18px;
+    padding: 18px 14px;
+    box-shadow: 0 20px 36px rgba(6, 23, 58, 0.3);
+}
+
+.admin-v2:not(.dashboard-v2) .user-card {
+    text-align: left;
+    padding: 2px 4px 14px;
+    border-bottom: 1px solid rgba(139, 177, 240, 0.24);
+    margin-bottom: 4px;
+}
+
+.admin-v2:not(.dashboard-v2) .avatar {
+    margin-bottom: 10px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+}
+
+.admin-v2:not(.dashboard-v2) .user-card h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: #f2f7ff;
+}
+
+.admin-v2:not(.dashboard-v2) .user-card .muted {
+    margin-top: 3px;
+    color: #9fb9e8;
+}
+
+.admin-v2:not(.dashboard-v2) .side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.admin-v2:not(.dashboard-v2) .side-nav a {
+    border-radius: 11px;
+    border: 1px solid rgba(149, 182, 240, 0.22);
+    background: rgba(148, 178, 238, 0.08);
+    color: #dbe8ff;
+    font-weight: 500;
+}
+
+.admin-v2:not(.dashboard-v2) .side-nav a:hover {
+    background: rgba(142, 175, 238, 0.18);
+    border-color: rgba(170, 198, 245, 0.35);
+}
+
+.admin-v2:not(.dashboard-v2) .side-nav a.active {
+    background: linear-gradient(135deg, #2f6ef3, #2556cf);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(39, 93, 207, 0.35);
+}
+
+.admin-v2:not(.dashboard-v2) .dashboard-main {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.admin-v2:not(.dashboard-v2) .dash-header {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: var(--admin-shadow);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-v2:not(.dashboard-v2) .page-intro {
+    min-width: 0;
+}
+
+.admin-v2:not(.dashboard-v2) .page-intro .muted {
+    margin: 0;
+}
+
+.admin-v2:not(.dashboard-v2) .header-actions {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-v2:not(.dashboard-v2) .dash-header h1 {
+    margin: 2px 0 0;
+    color: #122d56;
+}
+
+.admin-v2:not(.dashboard-v2) .card,
+.admin-v2:not(.dashboard-v2) .panel-card {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: 16px;
+    box-shadow: var(--admin-shadow);
+    padding: 20px;
+}
+
+.admin-v2:not(.dashboard-v2) .card-list {
+    margin-top: 14px;
+}
+
+.admin-v2 .is-hidden {
+    display: none;
+}
+
+.admin-v2 .grid-3-tight {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.admin-v2 .checkbox-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.admin-v2 .checkbox-row input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.admin-v2 .filter-inline {
+    max-width: 260px;
+    margin-bottom: 10px;
+}
+
+.admin-v2 .form-gap-bottom {
+    margin-bottom: 14px;
+}
+
+.admin-v2 .top-gap-sm {
+    margin-top: 10px;
+}
+
+.admin-v2 .top-gap-md {
+    margin-top: 12px;
+}
+
+.admin-v2 .span-2 {
+    grid-column: span 2;
+}
+
+.admin-v2 .prewrap {
+    white-space: pre-wrap;
+}
+
+.admin-v2:not(.dashboard-v2) .card h2,
+.admin-v2:not(.dashboard-v2) .panel-card h3 {
+    color: #142f59;
+}
+
+.admin-v2:not(.dashboard-v2) form {
+    display: grid;
+    gap: 10px;
+}
+
+.admin-v2:not(.dashboard-v2) input,
+.admin-v2:not(.dashboard-v2) select,
+.admin-v2:not(.dashboard-v2) textarea {
+    background: var(--admin-surface-soft);
+    border: 1px solid #ceddf5;
+    color: var(--admin-text);
+}
+
+.admin-v2:not(.dashboard-v2) input:focus,
+.admin-v2:not(.dashboard-v2) select:focus,
+.admin-v2:not(.dashboard-v2) textarea:focus {
+    border-color: #6a97ec;
+    box-shadow: 0 0 0 3px rgba(77, 127, 226, 0.22);
+}
+
+.admin-v2:not(.dashboard-v2) .btn.secondary {
+    background: #eef3fd;
+    border-color: #d4e2f8;
+    color: #274678;
+}
+
+.admin-v2:not(.dashboard-v2) .card table {
+    margin-top: 6px;
+}
+
+.admin-v2:not(.dashboard-v2) th,
+.admin-v2:not(.dashboard-v2) td {
+    background: #fdfefe;
+    color: #2a4063;
+}
+
+.admin-v2:not(.dashboard-v2) tbody tr:hover td {
+    background: var(--admin-primary-soft);
+}
+
+.admin-v2:not(.dashboard-v2) .mobile-menu-btn {
+    border: 1px solid #d1dff5;
+    background: #f8fbff;
+    color: #284575;
+}
+
+@media (max-width: 1024px) {
+    .admin-v2:not(.dashboard-v2) .dashboard-layout {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .admin-v2:not(.dashboard-v2) .sidebar {
+        width: min(76vw, 270px);
+        border-radius: 0 14px 14px 0;
+    }
+
+    .admin-v2:not(.dashboard-v2) .dash-header,
+    .admin-v2:not(.dashboard-v2) .card,
+    .admin-v2:not(.dashboard-v2) .panel-card {
+        padding: 14px;
+    }
+
+    .admin-v2:not(.dashboard-v2) .header-actions {
+        width: 100%;
+        margin-left: 0;
+    }
+}

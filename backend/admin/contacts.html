@@ -22,6 +22,7 @@
                 <a href="contacts.html" class="active">Contactos</a>
                 <a href="clients.html">Clientes</a>
                 <a href="services.html">Servicios</a>
+                <a href="hero.html">Hero y Logo</a>
                 <a href="plans.html">Planes</a>
                 <a href="testimonials.html">Testimonios</a>
                 <a href="portfolio.html">Trabajos</a>
@@ -38,7 +39,7 @@
         <main class="dashboard-main">
             <header class="dash-header">
                 <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" onclick="document.body.classList.toggle('sidebar-open')">☰</button>
-                <div>
+                <div class="page-intro">
                     <p class="muted">Gestión de contactos</p>
                     <h1>Solicitudes</h1>
                 </div>
@@ -71,10 +72,10 @@
     </div>
 
     <!-- Modal detalle contacto -->
-    <div id="contactModal" class="modal-backdrop" style="display:none;">
+    <div id="contactModal" class="modal-backdrop is-hidden">
         <div class="modal">
             <h3>Detalle de contacto</h3>
-            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px;">
+            <div class="grid-3 grid-3-tight">
                 <div>
                     <strong>Nombre</strong>
                     <div id="cName"></div>
@@ -105,9 +106,9 @@
                     <div id="cDate"></div>
                 </div>
             </div>
-            <div style="margin-top:12px;">
+            <div class="top-gap-md">
                 <strong>Mensaje</strong>
-                <div id="cMessage" class="muted" style="white-space:pre-wrap;"></div>
+                <div id="cMessage" class="muted prewrap"></div>
             </div>
             <div class="modal-actions">
                 <button class="btn secondary" id="closeContactModal">Cerrar</button>
